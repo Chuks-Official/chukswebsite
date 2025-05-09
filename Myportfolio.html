@@ -17,14 +17,12 @@
       box-sizing: border-box;
       font-family: 'Poppins', sans-serif;
     }
-/* --- Responsive Design --- */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem;
-  }
-
+    .menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  color: #00f7ff;
+  cursor: pointer;
+}
     body {
       background: radial-gradient(ellipse at top left, #0d0d0d, #000);
       color: #fff;
@@ -187,6 +185,10 @@
 </head>
 <body>
   <header class="navbar">
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+    
     <div class="logo">Chuks .N. <span>Prosper</span></div>
     <nav>
       <ul class="nav-links">
@@ -217,6 +219,13 @@
       </div>
     </div>
   </section>
+  <script>
+    function toggleMenu() {
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.classList.toggle('show');
+    }
+  </script>
+  
   <footer>
    
     <div class="social-icons">
